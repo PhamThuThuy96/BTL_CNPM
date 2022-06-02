@@ -100,10 +100,8 @@ public class phongform extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         jTextFieldMAPHONG = new javax.swing.JTextField();
         jTextFieldTENPHONG = new javax.swing.JTextField();
-        jTextFieldLOAIPHONG = new javax.swing.JTextField();
         jTextFieldGIAPHONG = new javax.swing.JTextField();
         jTextFieldCHUTHICHP = new javax.swing.JTextField();
-        jTextFieldTINHTRANG = new javax.swing.JTextField();
         them3 = new javax.swing.JButton();
         sua3 = new javax.swing.JButton();
         xoa3 = new javax.swing.JButton();
@@ -114,6 +112,8 @@ public class phongform extends javax.swing.JFrame {
         jTextFieldMADVP = new javax.swing.JTextField();
         jButtonclear3 = new javax.swing.JButton();
         thoat5 = new javax.swing.JButton();
+        jTextFieldLOAIPHONG = new javax.swing.JComboBox<>();
+        jTextFieldTINHTRANG = new javax.swing.JComboBox<>();
         myJList = new javax.swing.JTextField();
         thoat4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -228,6 +228,10 @@ public class phongform extends javax.swing.JFrame {
             }
         });
 
+        jTextFieldLOAIPHONG.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "standards", "vip", "royal", "business", "special" }));
+
+        jTextFieldTINHTRANG.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Còn ", "Không Còn" }));
+
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
@@ -239,7 +243,7 @@ public class phongform extends javax.swing.JFrame {
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(xoa3)
                             .addComponent(them3))
-                        .addGap(6, 6, Short.MAX_VALUE)
+                        .addGap(7, 7, Short.MAX_VALUE)
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(sua3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(thoat3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -247,7 +251,7 @@ public class phongform extends javax.swing.JFrame {
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonclear3)
                             .addComponent(thoat5))
-                        .addContainerGap(20, Short.MAX_VALUE))
+                        .addContainerGap(23, Short.MAX_VALUE))
                     .addGroup(jPanel18Layout.createSequentialGroup()
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel23)
@@ -260,14 +264,14 @@ public class phongform extends javax.swing.JFrame {
                             .addComponent(jLabel30))
                         .addGap(71, 71, 71)
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldMAPHONG, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                            .addComponent(jTextFieldMAPHONG)
                             .addComponent(jTextFieldTENPHONG)
-                            .addComponent(jTextFieldLOAIPHONG)
                             .addComponent(jTextFieldGIAPHONG)
                             .addComponent(jTextFieldCHUTHICHP)
-                            .addComponent(jTextFieldTINHTRANG)
                             .addComponent(jTextFieldMANVP)
-                            .addComponent(jTextFieldMADVP))
+                            .addComponent(jTextFieldMADVP)
+                            .addComponent(jTextFieldLOAIPHONG, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextFieldTINHTRANG, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())))
         );
         jPanel18Layout.setVerticalGroup(
@@ -282,10 +286,10 @@ public class phongform extends javax.swing.JFrame {
                     .addComponent(jLabel24)
                     .addComponent(jTextFieldTENPHONG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25)
                     .addComponent(jTextFieldLOAIPHONG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(10, 10, 10)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel26)
                     .addComponent(jTextFieldGIAPHONG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -295,9 +299,12 @@ public class phongform extends javax.swing.JFrame {
                     .addComponent(jTextFieldCHUTHICHP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel28)
-                    .addComponent(jTextFieldTINHTRANG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addComponent(jLabel28)
+                        .addGap(19, 19, 19))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                        .addComponent(jTextFieldTINHTRANG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel29)
                     .addComponent(jTextFieldMANVP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -346,7 +353,7 @@ public class phongform extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 754, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -377,7 +384,7 @@ public class phongform extends javax.swing.JFrame {
                                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLKS/Form/close.png"))); // NOI18N
@@ -392,26 +399,20 @@ public class phongform extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(1044, Short.MAX_VALUE)
+                .addContainerGap(1075, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(470, Short.MAX_VALUE))
+                .addContainerGap(501, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -424,10 +425,10 @@ public class phongform extends javax.swing.JFrame {
         TableModel model = jTablePHONG.getModel();
         jTextFieldMAPHONG.setText(model.getValueAt(i, 0).toString());
         jTextFieldTENPHONG.setText(model.getValueAt(i, 1).toString());
-        jTextFieldLOAIPHONG.setText(model.getValueAt(i, 2).toString());
+//        jTextFieldLOAIPHONG.getSelectedItem(model.getValueAt(i, 2).toString());
         jTextFieldGIAPHONG.setText(model.getValueAt(i, 3).toString());
         jTextFieldCHUTHICHP.setText(model.getValueAt(i, 4).toString());
-        jTextFieldTINHTRANG.setText(model.getValueAt(i, 5).toString());
+//        jTextFieldTINHTRANG.setText(model.getValueAt(i, 5).toString());
         jTextFieldMANVP.setText(model.getValueAt(i, 6).toString());
         jTextFieldMADVP.setText(model.getValueAt(i, 7).toString());
     }//GEN-LAST:event_jTablePHONGMouseClicked
@@ -439,7 +440,7 @@ public class phongform extends javax.swing.JFrame {
             // Tạo một đối tượng để thực hiện công việc
             st = (Statement) con.createStatement();
             String query = "INSERT INTO phong(MAPHONG,TENPHONG, LOAIPHONG, GIAPHONG, CHUTHICH, TINHTRANG, MANV, MADV) VALUES('" + jTextFieldMAPHONG.getText() + "',"
-            + "'" + jTextFieldTENPHONG.getText() + "','" + jTextFieldLOAIPHONG.getText() + "', '" + jTextFieldGIAPHONG.getText() + "', '" + jTextFieldCHUTHICHP.getText() + "', '" + jTextFieldTINHTRANG.getText() + "', '" + jTextFieldMANVP.getText() + "', '" + jTextFieldMADVP.getText() + "')";
+            + "'" + jTextFieldTENPHONG.getText() + "','" + jTextFieldLOAIPHONG.getSelectedItem() + "', '" + jTextFieldGIAPHONG.getText() + "', '" + jTextFieldCHUTHICHP.getText() + "', '" + jTextFieldTINHTRANG.getSelectedItem() + "', '" + jTextFieldMANVP.getText() + "', '" + jTextFieldMADVP.getText() + "')";
 
             st.execute(query);
             hienThiDanhSachPhong();
@@ -464,10 +465,10 @@ public class phongform extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel) jTablePHONG.getModel();
             model.setValueAt(jTextFieldMAPHONG.getText(), jTablePHONG.getSelectedRow(), 0);
             model.setValueAt(jTextFieldTENPHONG.getText().toString(), jTablePHONG.getSelectedRow(), 1);
-            model.setValueAt(jTextFieldLOAIPHONG.getText(), jTablePHONG.getSelectedRow(), 2);
+            model.setValueAt(jTextFieldLOAIPHONG.getSelectedItem(), jTablePHONG.getSelectedRow(), 2);
             model.setValueAt(jTextFieldGIAPHONG.getText(), jTablePHONG.getSelectedRow(), 3);
             model.setValueAt(jTextFieldCHUTHICHP.getText(), jTablePHONG.getSelectedRow(), 4);
-            model.setValueAt(jTextFieldTINHTRANG.getText(), jTablePHONG.getSelectedRow(), 5);
+            model.setValueAt(jTextFieldTINHTRANG.getSelectedItem(), jTablePHONG.getSelectedRow(), 5);
             model.setValueAt(jTextFieldMANVP.getText(), jTablePHONG.getSelectedRow(), 6);
             model.setValueAt(jTextFieldMADVP.getText(), jTablePHONG.getSelectedRow(), 7);
         }
@@ -505,10 +506,10 @@ public class phongform extends javax.swing.JFrame {
         // TODO add your handling code here:
         jTextFieldMAPHONG.setText("");
         jTextFieldTENPHONG.setText("");
-        jTextFieldLOAIPHONG.setText("");
+//        jTextFieldLOAIPHONG.setText("");
         jTextFieldGIAPHONG.setText("");
         jTextFieldCHUTHICHP.setText("");
-        jTextFieldTINHTRANG.setText("");
+//        jTextFieldTINHTRANG.setText("");
         jTextFieldMANVP.setText("");
         jTextFieldMADVP.setText("");
         jTextFieldMAPHONG.requestFocus();
@@ -600,12 +601,12 @@ public class phongform extends javax.swing.JFrame {
     private javax.swing.JTable jTablePHONG;
     private javax.swing.JTextField jTextFieldCHUTHICHP;
     private javax.swing.JTextField jTextFieldGIAPHONG;
-    private javax.swing.JTextField jTextFieldLOAIPHONG;
+    private javax.swing.JComboBox<String> jTextFieldLOAIPHONG;
     private javax.swing.JTextField jTextFieldMADVP;
     private javax.swing.JTextField jTextFieldMANVP;
     private javax.swing.JTextField jTextFieldMAPHONG;
     private javax.swing.JTextField jTextFieldTENPHONG;
-    private javax.swing.JTextField jTextFieldTINHTRANG;
+    private javax.swing.JComboBox<String> jTextFieldTINHTRANG;
     private javax.swing.JTextField myJList;
     private javax.swing.JButton sua3;
     private javax.swing.JButton them3;

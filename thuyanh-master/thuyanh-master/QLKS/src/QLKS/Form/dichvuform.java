@@ -90,7 +90,6 @@ public class dichvuform extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jTextFieldMADV = new javax.swing.JTextField();
-        jTextFieldTENDV = new javax.swing.JTextField();
         jTextFieldGIADV = new javax.swing.JTextField();
         them2 = new javax.swing.JButton();
         sua2 = new javax.swing.JButton();
@@ -98,6 +97,7 @@ public class dichvuform extends javax.swing.JFrame {
         thoat2 = new javax.swing.JButton();
         jButtonclear1 = new javax.swing.JButton();
         thoat3 = new javax.swing.JButton();
+        jTextFieldTENDV = new javax.swing.JComboBox<>();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTableDichvu = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -110,34 +110,37 @@ public class dichvuform extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(255, 51, 51));
 
         jLabel18.setBackground(new java.awt.Color(0, 0, 255));
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel18.setText("DANH SÁCH DỊCH VỤ");
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87))
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(29, 29, 29))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder("Thông Tin Dịch Vụ"));
 
-        jLabel19.setText("Mã Dịch Vụ");
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel19.setText("Mã Dịch Vụ:");
 
-        jLabel20.setText("Tên DịchVụ");
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel20.setText("Tên Dịch Vụ:");
 
-        jLabel21.setText("Giá Dịch Vụ");
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel21.setText("Giá Dịch Vụ:");
 
+        them2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         them2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLKS/Form/hinh/THEM.png"))); // NOI18N
         them2.setText("Thêm");
         them2.addActionListener(new java.awt.event.ActionListener() {
@@ -146,6 +149,7 @@ public class dichvuform extends javax.swing.JFrame {
             }
         });
 
+        sua2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         sua2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLKS/Form/hinh/SUA.png"))); // NOI18N
         sua2.setText("Sửa");
         sua2.addActionListener(new java.awt.event.ActionListener() {
@@ -154,6 +158,7 @@ public class dichvuform extends javax.swing.JFrame {
             }
         });
 
+        xoa2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         xoa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLKS/Form/hinh/XOA.png"))); // NOI18N
         xoa2.setText("Xóa");
         xoa2.addActionListener(new java.awt.event.ActionListener() {
@@ -162,6 +167,7 @@ public class dichvuform extends javax.swing.JFrame {
             }
         });
 
+        thoat2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         thoat2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLKS/Form/hinh/THOAT.png"))); // NOI18N
         thoat2.setText("Thoát");
         thoat2.addActionListener(new java.awt.event.ActionListener() {
@@ -170,6 +176,7 @@ public class dichvuform extends javax.swing.JFrame {
             }
         });
 
+        jButtonclear1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonclear1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLKS/Form/hinh/CLEAR.png"))); // NOI18N
         jButtonclear1.setText("Clear");
         jButtonclear1.addActionListener(new java.awt.event.ActionListener() {
@@ -178,6 +185,7 @@ public class dichvuform extends javax.swing.JFrame {
             }
         });
 
+        thoat3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         thoat3.setText("Trang chủ");
         thoat3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -190,67 +198,79 @@ public class dichvuform extends javax.swing.JFrame {
             }
         });
 
+        jTextFieldTENDV.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTextFieldTENDV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nhà hàng", "Spa", "Bar", "Giặt ủi", "Dịch vụ khác" }));
+
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel21)
-                        .addComponent(jLabel20)
-                        .addComponent(jLabel19))
-                    .addComponent(them2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(xoa2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldMADV, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                            .addComponent(jTextFieldTENDV)
-                            .addComponent(jTextFieldGIADV)))
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addGap(26, 26, 26)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addComponent(thoat2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(thoat3))
-                            .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addComponent(sua2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel21)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButtonclear1)))))
-                .addContainerGap(30, Short.MAX_VALUE))
+                                .addComponent(jTextFieldGIADV))
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(them2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(jPanel15Layout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addComponent(jLabel19)
+                                        .addGap(6, 6, 6))
+                                    .addComponent(xoa2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(29, 29, 29)
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(sua2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(thoat2, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(thoat3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButtonclear1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldMADV)
+                            .addComponent(jTextFieldTENDV, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(24, 24, 24)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(jTextFieldMADV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldMADV, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19))
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(jLabel20))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jTextFieldTENDV, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldGIADV, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21))
+                .addGap(66, 66, 66)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButtonclear1, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                    .addComponent(them2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(sua2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20)
-                    .addComponent(jTextFieldTENDV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21)
-                    .addComponent(jTextFieldGIADV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(them2)
-                    .addComponent(sua2)
-                    .addComponent(jButtonclear1))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(xoa2)
-                    .addComponent(thoat2)
-                    .addComponent(thoat3))
-                .addContainerGap(43, Short.MAX_VALUE))
+                    .addComponent(xoa2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(thoat2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(thoat3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
+        jTableDichvu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTableDichvu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -273,12 +293,14 @@ public class dichvuform extends javax.swing.JFrame {
             }
         });
 
+        myJList.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         myJList.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 myJListKeyReleased(evt);
             }
         });
 
+        thoat4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         thoat4.setText("Tìm kiếm");
         thoat4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -295,59 +317,57 @@ public class dichvuform extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(134, 134, 134)
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(238, 238, 238)
-                        .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(thoat4)
-                                .addGap(72, 72, 72)
-                                .addComponent(jLabel1))
-                            .addComponent(myJList, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(112, 112, 112)
+                        .addComponent(myJList, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                        .addComponent(thoat4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                                .addComponent(thoat4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(myJList, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(jLabel1)
+                        .addGap(16, 16, 16)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(thoat4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(myJList, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 14, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -361,7 +381,7 @@ public class dichvuform extends javax.swing.JFrame {
             // Tạo một đối tượng để thực hiện công việc
             st = (Statement) con.createStatement();
             String query = "INSERT INTO DichVu(MADV,TENDV, GIADV) VALUES('" + jTextFieldMADV.getText() + "',"
-            + "'" + jTextFieldTENDV.getText() + "','" + jTextFieldGIADV.getText() + "')";
+            + "'" + jTextFieldTENDV.getSelectedItem() + "','" + jTextFieldGIADV.getText() + "')";
 
             st.execute(query);
             hienThiDanhSachDichVu();
@@ -384,7 +404,7 @@ public class dichvuform extends javax.swing.JFrame {
         else{
             DefaultTableModel model = (DefaultTableModel) jTableDichvu.getModel();
             model.setValueAt(jTextFieldMADV.getText(), jTableDichvu.getSelectedRow(), 0);
-            model.setValueAt(jTextFieldTENDV.getText().toString(), jTableDichvu.getSelectedRow(), 1);
+            model.setValueAt(jTextFieldTENDV.getSelectedItem().toString(), jTableDichvu.getSelectedRow(), 1);
             model.setValueAt(jTextFieldGIADV.getText(), jTableDichvu.getSelectedRow(), 2);
         }
 
@@ -421,7 +441,7 @@ public class dichvuform extends javax.swing.JFrame {
     private void jButtonclear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonclear1ActionPerformed
         // TODO add your handling code here:
         jTextFieldMADV.setText("");
-        jTextFieldTENDV.setText("");
+//        jTextFieldTENDV.getS("");
         jTextFieldGIADV.setText("");
         jTextFieldMADV.requestFocus();
     }//GEN-LAST:event_jButtonclear1ActionPerformed
@@ -431,7 +451,7 @@ public class dichvuform extends javax.swing.JFrame {
         int i = jTableDichvu.getSelectedRow();
         TableModel model = jTableDichvu.getModel();
         jTextFieldMADV.setText(model.getValueAt(i, 0).toString());
-        jTextFieldTENDV.setText(model.getValueAt(i, 1).toString());
+//        jTextFieldTENDV.getSelectedItem(model.getValueAt(i, 1).toString());
         jTextFieldGIADV.setText(model.getValueAt(i, 2).toString());
 
     }//GEN-LAST:event_jTableDichvuMouseClicked
@@ -515,7 +535,7 @@ public class dichvuform extends javax.swing.JFrame {
     private javax.swing.JTable jTableDichvu;
     private javax.swing.JTextField jTextFieldGIADV;
     private javax.swing.JTextField jTextFieldMADV;
-    private javax.swing.JTextField jTextFieldTENDV;
+    private javax.swing.JComboBox<String> jTextFieldTENDV;
     private javax.swing.JTextField myJList;
     private javax.swing.JButton sua2;
     private javax.swing.JButton them2;

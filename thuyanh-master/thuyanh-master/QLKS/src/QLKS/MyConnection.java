@@ -7,7 +7,7 @@ public class MyConnection {
     public static java.sql.Connection getConnection() {
         java.sql.Connection conn = null;
         try {
-            String url = "jdbc:sqlserver://DESKTOP-2I3M01H;databaseName=QL_KHACHSAN;port=1433";
+            String url = "jdbc:sqlserver://LAPTOP-Q567C0RF;databaseName=QL_KHACHSAN;port=1433";
          Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             String username = "sa";
             String password = "123456";

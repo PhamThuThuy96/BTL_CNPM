@@ -100,7 +100,6 @@ public class khachhangform extends javax.swing.JFrame {
         jTextFieldTENKH = new javax.swing.JTextField();
         jTextFieldCMND = new javax.swing.JTextField();
         jTextFieldQUOCTICH = new javax.swing.JTextField();
-        jTextFieldGIOITINHKH = new javax.swing.JTextField();
         jTextFieldTUOI = new javax.swing.JTextField();
         jTextFieldSDT = new javax.swing.JTextField();
         jTextFieldMAPHONGKH = new javax.swing.JTextField();
@@ -110,6 +109,7 @@ public class khachhangform extends javax.swing.JFrame {
         thoat1 = new javax.swing.JButton();
         jButtonclear2 = new javax.swing.JButton();
         thoat2 = new javax.swing.JButton();
+        jTextFieldGIOITINHKH = new javax.swing.JComboBox<>();
         jPanel11 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -210,6 +210,8 @@ public class khachhangform extends javax.swing.JFrame {
             }
         });
 
+        jTextFieldGIOITINHKH.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ" }));
+
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
@@ -242,15 +244,15 @@ public class khachhangform extends javax.swing.JFrame {
                             .addComponent(jLabel16)
                             .addComponent(jLabel17))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldQUOCTICH, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldCMND, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldTENKH, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldMAKH, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldGIOITINHKH, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldTUOI, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldSDT, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldMAPHONGKH, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldQUOCTICH, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                            .addComponent(jTextFieldCMND, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                            .addComponent(jTextFieldTENKH, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                            .addComponent(jTextFieldMAKH, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                            .addComponent(jTextFieldTUOI, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                            .addComponent(jTextFieldSDT, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                            .addComponent(jTextFieldMAPHONGKH, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                            .addComponent(jTextFieldGIOITINHKH, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
@@ -273,10 +275,10 @@ public class khachhangform extends javax.swing.JFrame {
                     .addComponent(jLabel13)
                     .addComponent(jTextFieldQUOCTICH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel14)
                     .addComponent(jTextFieldGIOITINHKH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
                     .addComponent(jTextFieldTUOI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -418,7 +420,7 @@ public class khachhangform extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 22, Short.MAX_VALUE)
+                .addGap(0, 28, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -446,7 +448,7 @@ public class khachhangform extends javax.swing.JFrame {
         jTextFieldTENKH.setText(model.getValueAt(i, 1).toString());
         jTextFieldCMND.setText(model.getValueAt(i, 2).toString());
         jTextFieldQUOCTICH.setText(model.getValueAt(i, 3).toString());
-        jTextFieldGIOITINHKH.setText(model.getValueAt(i, 4).toString());
+//        jTextFieldGIOITINHKH.getSelectedItem(model.getValueAt(i, 4).toString());
         jTextFieldTUOI.setText(model.getValueAt(i, 5).toString());
         jTextFieldSDT.setText(model.getValueAt(i, 6).toString());
         jTextFieldMAPHONGKH.setText(model.getValueAt(i, 7).toString());
@@ -467,7 +469,7 @@ public class khachhangform extends javax.swing.JFrame {
         jTextFieldTENKH.setText("");
         jTextFieldCMND.setText("");
         jTextFieldQUOCTICH.setText("");
-        jTextFieldGIOITINHKH.setText("");
+//        jTextFieldGIOITINHKH.setText("");
         jTextFieldTUOI.setText("");
         jTextFieldSDT.setText("");
         jTextFieldMAPHONGKH.setText("");
@@ -517,7 +519,7 @@ public class khachhangform extends javax.swing.JFrame {
             model.setValueAt(jTextFieldTENKH.getText().toString(), jTableKhachhang.getSelectedRow(), 1);
             model.setValueAt(jTextFieldCMND.getText(), jTableKhachhang.getSelectedRow(), 2);
             model.setValueAt(jTextFieldQUOCTICH.getText(), jTableKhachhang.getSelectedRow(), 3);
-            model.setValueAt(jTextFieldGIOITINHKH.getText(), jTableKhachhang.getSelectedRow(), 4);
+            model.setValueAt(jTextFieldGIOITINHKH.getSelectedItem(), jTableKhachhang.getSelectedRow(), 4);
             model.setValueAt(jTextFieldTUOI.getText(), jTableKhachhang.getSelectedRow(), 5);
             model.setValueAt(jTextFieldSDT.getText(), jTableKhachhang.getSelectedRow(), 6);
             model.setValueAt(jTextFieldMAPHONGKH.getText(), jTableKhachhang.getSelectedRow(), 7);
@@ -531,7 +533,7 @@ public class khachhangform extends javax.swing.JFrame {
             // Tạo một đối tượng để thực hiện công việc
             st = (Statement) con.createStatement();
             String query = "INSERT INTO khachhang(MAKH,TENKH, CMND, QUOCTICH, GIOITINH, TUOI, SDT, MAPHONG) VALUES('" + jTextFieldMAKH.getText() + "',"
-            + "'" + jTextFieldTENKH.getText() + "','" + jTextFieldCMND.getText() + "', '" + jTextFieldQUOCTICH.getText() + "', '" + jTextFieldGIOITINHKH.getText() + "', '" + jTextFieldTUOI.getText() + "', '" + jTextFieldSDT.getText() + "', '" + jTextFieldMAPHONGKH.getText() + "')";
+        + "'" + jTextFieldTENKH.getText() + "','" + jTextFieldCMND.getText() + "', '" + jTextFieldQUOCTICH.getText() + "', '" + jTextFieldGIOITINHKH.getSelectedItem() + "', '" + jTextFieldTUOI.getText() + "', '" + jTextFieldSDT.getText() + "', '" + jTextFieldMAPHONGKH.getText() + "')";
 
             st.execute(query);
             hienThiDanhSachKhachHang();
@@ -614,7 +616,7 @@ public class khachhangform extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableKhachhang;
     private javax.swing.JTextField jTextFieldCMND;
-    private javax.swing.JTextField jTextFieldGIOITINHKH;
+    private javax.swing.JComboBox<String> jTextFieldGIOITINHKH;
     private javax.swing.JTextField jTextFieldMAKH;
     private javax.swing.JTextField jTextFieldMAPHONGKH;
     private javax.swing.JTextField jTextFieldQUOCTICH;

@@ -2,6 +2,10 @@ package QLKS.Form;
 import QLKS.Form.MENUFORM;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.sql.Connection;
+import static QLKS.MyConnection.getConnection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -37,13 +41,6 @@ public class Chart extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         panel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        txt_1 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        txt_2 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txt_3 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        txt_4 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -74,7 +71,7 @@ public class Chart extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(296, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
@@ -133,27 +130,15 @@ public class Chart extends javax.swing.JFrame {
                 panelMouseClicked(evt);
             }
         });
+        panel.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                panelComponentShown(evt);
+            }
+        });
         panel.setLayout(new java.awt.BorderLayout());
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setText("Phòng bình thường");
-
-        txt_1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setText("Phòng cao cấp");
-
-        txt_2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setText("Phòng đặc biệt");
-
-        txt_3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setText("Phòng VIP");
-
-        txt_4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setText("THỐNG KÊ SỐ LƯỢNG PHÒNG");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -167,26 +152,12 @@ public class Chart extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(txt_1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(txt_2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(txt_3, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(txt_4, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addGap(218, 218, 218)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE, 1057, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,26 +172,10 @@ public class Chart extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txt_1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txt_3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3))
                         .addGap(28, 28, 28))))
         );
 
@@ -249,26 +204,73 @@ public class Chart extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        int s1 = Integer.parseInt(txt_1.getText());
-        int s2 = Integer.parseInt(txt_2.getText());
-        int s3 = Integer.parseInt(txt_3.getText());
-        int s4 = Integer.parseInt(txt_4.getText());
+//        int a = Integer.parseInt(txt_1.getText());
         
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        dataset.setValue(s1,"","Phòng bình thường");
-        dataset.setValue(s2,"","Phòng cao cấp");
-        dataset.setValue(s3,"","Phòng đặc biệt");
-        dataset.setValue(s4,"","Phòng VIP");
+        Connection con = getConnection();
+        Statement st= null;
+        int standards = 0;
+        int vip = 0;
+        int business = 0;
+        int royal = 0;
+        int special = 0;
+        try {
+            st = (Statement) con.createStatement();
+            String sql = "Select a.standards, b.vip, c.business, d.royal, e.special from (Select count(1) standards from PHONG  where LOAIPHONG = 'standard') a, (Select count(1) vip from PHONG  where LOAIPHONG = 'vip') b, (Select count(1) business from PHONG  where LOAIPHONG = 'business') c, (Select count(1) royal from PHONG  where LOAIPHONG = 'royal') d, (Select count(1) special from PHONG  where LOAIPHONG = 'special') e";
+            // Thưcj thi câu lệnh truy vấn
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                standards = Integer.parseInt(rs.getString("standards"));
+                vip = Integer.parseInt(rs.getString("vip"));
+                business = Integer.parseInt(rs.getString("business"));
+                royal = Integer.parseInt(rs.getString("royal"));
+                special = Integer.parseInt(rs.getString("special"));
+            }
+            DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+            dataset.setValue(standards,"standard","Standard");
+            dataset.setValue(vip,"vip","Vip");
+            dataset.setValue(business,"business","Business");
+            dataset.setValue(royal,"royal","Royal");
+            dataset.setValue(special,"special","Special");
+//        
+            JFreeChart chart;
+            chart = ChartFactory.createBarChart("Số lượng còn (Phòng)", "", "",
+                    dataset, PlotOrientation.VERTICAL, false, false, false);
+            CategoryPlot catPlot = chart.getCategoryPlot(); 
+            catPlot.setRangeGridlinePaint(Color.BLACK);
+
+            ChartPanel chartPanel = new ChartPanel(chart);
+            panel.removeAll();
+            panel.add(chartPanel , BorderLayout.CENTER);
+            panel.validate();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+
+        }
         
-        JFreeChart chart = ChartFactory.createBarChart3D("Số lượng còn (Phòng)", "", "",
-                dataset, PlotOrientation.VERTICAL, false, false, false);
-        CategoryPlot catPlot = chart.getCategoryPlot(); 
-        catPlot.setRangeGridlinePaint(Color.BLACK);
         
-        ChartPanel chartPanel = new ChartPanel(chart);
-        panel.removeAll();
-        panel.add(chartPanel , BorderLayout.CENTER);
-        panel.validate();
+//        int b = Integer.parseInt(txt_2.getText());
+//        int c = Integer.parseInt(txt_3.getText());
+//        int d = Integer.parseInt(txt_4.getText());
+//        int e = Integer.parseInt(txt_4.getText());
+//        
+//        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+//        dataset.setValue(a,"standard","Phòng tiêu chuẩn");
+//        dataset.setValue(b,"vip","Phòng cao cấp");
+//        dataset.setValue(c,"business","Phòng đặc biệt");
+//        dataset.setValue(d,"royal","Phòng thương gia");
+//        dataset.setValue(e,"special","Phòng Vip");
+//        
+//        JFreeChart chart;
+//        chart = ChartFactory.createBarChart("Số lượng còn (Phòng)", "", "",
+//                dataset, PlotOrientation.VERTICAL, false, false, false);
+//        CategoryPlot catPlot = chart.getCategoryPlot(); 
+//        catPlot.setRangeGridlinePaint(Color.BLACK);
+//        
+//        ChartPanel chartPanel = new ChartPanel(chart);
+//        panel.removeAll();
+//        panel.add(chartPanel , BorderLayout.CENTER);
+//        panel.validate();
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void panelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelMouseClicked
@@ -279,6 +281,53 @@ public class Chart extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void panelComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_panelComponentShown
+        // TODO add your handling code here:                                    
+//        int a = Integer.parseInt(txt_1.getText());
+        
+        Connection con = getConnection();
+        Statement st= null;
+        int standards = 0;
+        int vip = 0;
+        int business = 0;
+        int royal = 0;
+        int special = 0;
+        try {
+            st = (Statement) con.createStatement();
+            String sql = "Select a.standards, b.vip, c.business, d.royal, e.special from (Select count(1) standards from PHONG  where LOAIPHONG = 'standard') a, (Select count(1) vip from PHONG  where LOAIPHONG = 'vip') b, (Select count(1) business from PHONG  where LOAIPHONG = 'business') c, (Select count(1) royal from PHONG  where LOAIPHONG = 'royal') d, (Select count(1) special from PHONG  where LOAIPHONG = 'special') e";
+            // Thưcj thi câu lệnh truy vấn
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                standards = Integer.parseInt(rs.getString("standards"));
+                vip = Integer.parseInt(rs.getString("vip"));
+                business = Integer.parseInt(rs.getString("business"));
+                royal = Integer.parseInt(rs.getString("royal"));
+                special = Integer.parseInt(rs.getString("special"));
+            }
+            DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+            dataset.setValue(standards,"standard","Phòng tiêu chuẩn");
+            dataset.setValue(vip,"vip","Phòng cao cấp");
+            dataset.setValue(business,"business","Phòng đặc biệt");
+            dataset.setValue(royal,"royal","Phòng thương gia");
+            dataset.setValue(special,"special","Phòng Vip");
+//        
+            JFreeChart chart;
+            chart = ChartFactory.createBarChart("Số lượng còn (Phòng)", "", "",
+                    dataset, PlotOrientation.HORIZONTAL, false, false, false);
+            CategoryPlot catPlot = chart.getCategoryPlot(); 
+            catPlot.setRangeGridlinePaint(Color.BLACK);
+
+            ChartPanel chartPanel = new ChartPanel(chart);
+            panel.removeAll();
+            panel.add(chartPanel , BorderLayout.CENTER);
+            panel.validate();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+
+        }
+    }//GEN-LAST:event_panelComponentShown
 
     /**
      * @param args the command line arguments
@@ -324,18 +373,11 @@ public class Chart extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel panel;
-    private javax.swing.JTextField txt_1;
-    private javax.swing.JTextField txt_2;
-    private javax.swing.JTextField txt_3;
-    private javax.swing.JTextField txt_4;
     // End of variables declaration//GEN-END:variables
 }
